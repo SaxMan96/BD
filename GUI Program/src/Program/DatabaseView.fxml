@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+   <children>
+      <SplitPane dividerPositions="0.2656641604010025" layoutX="-7.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane fx:id="leftAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="214.0">
+               <children>
+                  <SplitPane dividerPositions="0.5906040268456376" layoutX="21.0" layoutY="43.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane fx:id="upperPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="207.0">
+                           <children>
+                              <VBox layoutX="14.0" layoutY="44.0" prefHeight="209.0" prefWidth="207.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <TextField fx:id="EmployeeIDTextField" layoutX="14.0" layoutY="44.0" promptText="Employee ID" />
+                                    <TextField fx:id="FirstNameTextField" layoutX="14.0" layoutY="69.0" promptText="First Name" />
+                                    <TextField fx:id="LastNameTextField" layoutX="14.0" layoutY="94.0" promptText="Last Name" />
+                                    <TextField fx:id="TaskTextField" layoutX="14.0" layoutY="119.0" promptText="Task">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox alignment="CENTER" spacing="5.0">
+                                       <children>
+                                          <CheckBox fx:id="warehouseIDCheck" onAction="#setWarehouseIDCheck" mnemonicParsing="false" text="Brak" />
+                                          <ComboBox fx:id="warehouseIDCombo" prefHeight="25.0" prefWidth="137.0" promptText="Warehouse ID" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" spacing="5.0">
+                                       <children>
+                                          <CheckBox fx:id="managerIDCheck" onAction="#setManagerIDCheck" mnemonicParsing="false" text="Brak" />
+                                          <ComboBox fx:id="managerIDCombo" prefHeight="25.0" prefWidth="137.0" promptText="Manager ID" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addEmployee" prefHeight="25.0" prefWidth="110.0" text="Add" />
+                                          <Button fx:id="updateBtn" mnemonicParsing="false" onAction="#updateEmployee" prefHeight="25.0" prefWidth="116.0" text="Update" />
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteEmployee" prefHeight="33.0" prefWidth="225.0" text="Delete">
+                                       <graphic>
+                                          <TextField fx:id="DeleteTextField" prefHeight="25.0" prefWidth="126.0" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane fx:id="bottomPane" minHeight="0.0" minWidth="0.0" prefHeight="365.0" prefWidth="207.0">
+                           <children>
+                              <VBox layoutX="14.0" layoutY="63.0" prefHeight="382.0" prefWidth="212.0" spacing="10.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+                                 <children>
+                                    <Button fx:id="WarehousesOcupanyBtn" onAction="#warehousesOcupancy" layoutX="80.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="201.0" text="Warehouses Ocupancy" />
+                                    <TextField fx:id="warehousesOcupancyTextField"  editable="false" layoutX="32.0" layoutY="130.0" />
+                                    <Button fx:id="OrderTotalValueBtn" onAction="#ordersTotalValue" layoutX="80.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="261.0" text="Orders Total Value">
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <TextField fx:id="OrderTotalValueTextField" editable="false" layoutX="14.0" layoutY="232.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="rightAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="580.0">
+               <children>
+                  <TabPane layoutX="102.0" layoutY="67.0" prefHeight="598.0" prefWidth="593.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="employeesTab" onSelectionChanged="#refreshEmployees" text="Employees">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="569.0" prefWidth="554.0">
+                                 <children>
+                                    <TableView fx:id="employeesTable" layoutX="108.0" layoutY="97.0" onMouseClicked="#fillEmployee" prefHeight="569.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="EmployeeIDColumn" text="ID" />
+                                        <TableColumn fx:id="EmployeesNameColumn" prefWidth="91.0" text="Name" />
+                                          <TableColumn fx:id="EmployeesSurnameColumn" prefWidth="91.0" text="Surname" />
+                                          <TableColumn fx:id="EmployeesTaskColumn" prefWidth="110.0" text="Task" />
+                                          <TableColumn fx:id="EmployeesManagerIDColumn" prefWidth="99.0" text="Manager ID" />
+                                          <TableColumn fx:id="EmployeesWarehouseIDColumn" prefWidth="118.0" text="Warehouse ID" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="ordersTab" onSelectionChanged="#refreshOrders" text="Orders">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="ordersTable" layoutX="60.0" layoutY="14.0" prefHeight="569.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="OrdersIDColumn" prefWidth="77.0" text="ID" />
+                                          <TableColumn fx:id="OrdersDateColumn" prefWidth="88.0" text="Date" />
+                                        <TableColumn fx:id="OrdersSellerIDColumn" prefWidth="91.0" text="Seller ID" />
+                                          <TableColumn fx:id="OrdersCustomerIDColumn" minWidth="7.0" prefWidth="94.0" text="Customer ID" />
+                                          <TableColumn fx:id="OrdersProductsColumn" prefWidth="224.0" text="Products">
+                                              <columns>
+                                                  <TableColumn fx:id="OrdersQuantityColumn" prefWidth="112.0" text="Quantity" />
+                                                  <TableColumn fx:id="OrdersProductIDColumn" prefWidth="117.0" text="Product ID" />
+                                              </columns>
+                                          </TableColumn>
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="productsTab" onSelectionChanged="#refreshProducts" text="Products">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="productsTable" layoutX="63.0" layoutY="14.0" prefHeight="569.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="ProductsIDColumn" prefWidth="68.0" text="ID" />
+                                        <TableColumn fx:id="ProductsNameColumn" prefWidth="102.0" text="Name" />
+                                          <TableColumn fx:id="ProductsWarehouseIDColumn" prefWidth="105.0" text="Warehouse ID" />
+                                          <TableColumn fx:id="ProductsQuantityColumn" prefWidth="96.0" text="Quantity" />
+                                          <TableColumn fx:id="ProductsProductionColumn" minWidth="0.0" prefWidth="111.0" text="Production Cost" />
+                                          <TableColumn fx:id="ProductsPriceColumn" minWidth="5.0" prefWidth="107.0" text="Price" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <AnchorPane fx:id="semiVisibleAnchorPane" opacity="0.66" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="SetConnectionAnchorPane" layoutX="245.0" layoutY="169.0" prefHeight="189.0" prefWidth="322.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 6; -fx-border-width: 3;" visible="false">
+         <children>
+            <Button fx:id="initializeBtn" layoutX="116.0" layoutY="88.0" mnemonicParsing="false" text="Initialize" />
+            <Label layoutX="100.0" layoutY="50.0" text="Coffee Wholesale">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="135.0" text="Mateusz Dorobek Database May 2017" />
+         </children>
+      </AnchorPane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="HurtowniaGUI.jnlp">
+  <information>
+    <title>HurtowniaGUI</title>
+    <vendor>Unknown</vendor>
+    <description>HurtowniaGUI</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="HurtowniaGUI.jar" size="21917" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="Program.Program"  name="HurtowniaGUI" />
+  <update check="background"/>
+</jnlp>
